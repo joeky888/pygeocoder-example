@@ -1,0 +1,14 @@
+version: '2'
+services:
+    geoip:
+        image: geoip:1.0.20181022
+        build:
+            context: ./
+            dockerfile: ./docker/Dockerfile
+        container_name: geoip
+        restart: always
+        tty: true
+        ports:
+            - "1919:1919"
+
+# docker-compose -f docker-compose.yml up -d --build
